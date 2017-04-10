@@ -11,10 +11,10 @@ exports.assertion = function (selector, count) {
   this.expected = count;
   this.pass = function (val) {
     return val === this.expected;
-  }
+  };
   this.value = function (res) {
     return res.value;
-  }
+  };
   this.command = function (cb) {
     var self = this;
     return this.api.execute(function (selector) {
@@ -23,4 +23,4 @@ exports.assertion = function (selector, count) {
       cb.call(self, res);
     });
   }
-}
+};
